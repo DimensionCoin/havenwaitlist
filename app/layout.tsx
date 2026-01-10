@@ -5,10 +5,37 @@ import { Inter, DM_Sans } from "next/font/google";
 import { UserProvider } from "@/providers/UserProvider";
 
 export const metadata: Metadata = {
-  title: "Haven Vaults",
+  // ✅ REQUIRED for reliable OG/Twitter absolute URLs
+  metadataBase: new URL("https://YOUR_WAITLIST_DOMAIN.com"), // <-- change this
+
+  title: "Haven Financial",
   description: "Best app for financial growth.",
   manifest: "/manifest.webmanifest",
   themeColor: "#000000",
+
+  openGraph: {
+    title: "Haven Financial",
+    description: "Best app for financial growth.",
+    url: "https://YOUR_WAITLIST_DOMAIN.com", // <-- change this
+    siteName: "Haven Financial",
+    images: [
+      {
+        url: "https://YOUR_WAITLIST_DOMAIN.com/twitter.png", // <-- change + ensure exists
+        width: 1200,
+        height: 630,
+        alt: "Haven Financial",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Haven Financial",
+    description: "Best app for financial growth.",
+    images: ["https://YOUR_WAITLIST_DOMAIN.com/twitter.png"], // <-- change
+  },
+
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
@@ -27,18 +54,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        {/* iOS home screen icon (use your best 180x180 if you have it) */}
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
-        {/* Optional: iOS splash screens are separate (can add later) */}
       </head>
 
       <body
         className={`${inter.variable} ${dmSans.variable} min-h-screen bg-background text-foreground antialiased`}
       >
         <PrivyProviders>
-          <UserProvider>
-            {children}
-          </UserProvider>
+          <UserProvider>{children}</UserProvider>
         </PrivyProviders>
       </body>
     </html>
