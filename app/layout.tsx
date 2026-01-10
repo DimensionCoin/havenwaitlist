@@ -6,7 +6,7 @@ import { UserProvider } from "@/providers/UserProvider";
 
 export const metadata: Metadata = {
   // ✅ REQUIRED for reliable OG/Twitter absolute URLs
-  metadataBase: new URL("https://YOUR_WAITLIST_DOMAIN.com"), // <-- change this
+  metadataBase: new URL("https://havenfinancial.xyz"), // <-- change this
 
   title: "Haven Financial",
   description: "Best app for financial growth.",
@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Haven Financial",
     description: "Best app for financial growth.",
-    url: "https://YOUR_WAITLIST_DOMAIN.com", // <-- change this
+    url: "https://havenfinancial.xyz", // <-- change this
     siteName: "Haven Financial",
     images: [
       {
-        url: "https://YOUR_WAITLIST_DOMAIN.com/twitter.png", // <-- change + ensure exists
+        url: "https://havenfinancial.xyz/twitter.png", // <-- change + ensure exists
         width: 1200,
         height: 630,
         alt: "Haven Financial",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Haven Financial",
     description: "Best app for financial growth.",
-    images: ["https://YOUR_WAITLIST_DOMAIN.com/twitter.png"], // <-- change
+    images: ["https://havenfinancial.xyz/twitter.png"], // <-- change
   },
 
   appleWebApp: {
